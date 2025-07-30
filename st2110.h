@@ -72,7 +72,8 @@ wt_status_t wt_rx_create(wt_protocol_t proto, wt_codec_t codec,
                          wt_handle_t* handle);
 
 wt_status_t wt_register_rx_buffers(wt_handle_t handle, void** buffers, int buffer_count, size_t buffer_size);
-wt_status_t wt_register_rx_callback(wt_handle_t handle, wt_rx_callback_t cb, void* user_data);
+wt_status_t wt_register_rx_frame_callback(wt_handle_t handle, wt_rx_callback_t cb, void* user_data);
+wt_status_t wt_register_rx_packet_callback(wt_handle_t handle, wt_rx_callback_t cb, void* user_data);
 
 wt_status_t wt_rx_start(wt_handle_t handle);
 wt_status_t wt_rx_stop(wt_handle_t handle);
