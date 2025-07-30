@@ -20,14 +20,18 @@ typedef enum {
 } wt_status_t;
 
 typedef enum {
+  WT_PROTOCOL_ST20,
   WT_PROTOCOL_ST22,
-  WT_PROTOCOL_ST30
+  WT_PROTOCOL_ST30,
+  WT_PROTOCOL_ST31
 } wt_protocol_t;
 
 typedef enum {
+  WT_CODEC_RAW,
   WT_CODEC_H264,
   WT_CODEC_H265,
-  WT_CODEC_PCM_48K
+  WT_CODEC_PCM,
+  WT_CODEC_LPCM
 } wt_codec_t;
 
 typedef void* wt_handle_t;
@@ -55,6 +59,7 @@ wt_status_t wt_tx_create(wt_protocol_t proto, wt_codec_t codec,
 
 wt_status_t wt_tx_start(wt_handle_t handle);
 wt_status_t wt_tx_push_frame(wt_handle_t handle, const uint8_t* data, size_t size, uint64_t timestamp_ns);
+wt_status_t wt_tx_push_packet(wt_handle_t handle, const uint8_t* data, size_t size, uint64_t timestamp_ns);
 wt_status_t wt_tx_stop(wt_handle_t handle);
 wt_status_t wt_tx_destroy(wt_handle_t handle);
 
