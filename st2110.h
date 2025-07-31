@@ -47,7 +47,7 @@ typedef struct wt_tx wt_tx_t; // opaque
 typedef struct wt_tx wt_rx_t; // opaque
 
 typedef struct {
-	int codec,
+	wt_codec_t codec;
 
 	void* data;
 	size_t size;
