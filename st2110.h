@@ -28,6 +28,7 @@ typedef enum {
 
 typedef enum {
 	WT_CODEC_RAW,
+	WT_CODEC_JPEGXS,
 	WT_CODEC_H264,
 	WT_CODEC_H265,
 	WT_CODEC_PCM,
