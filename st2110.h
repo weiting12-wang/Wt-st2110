@@ -44,8 +44,10 @@ typedef enum {
 	WT_CONNECTION_STATUS_DISCONNECTED,
 } wt_connection_status_t;
 
-typedef struct wt_tx wt_tx_t; // opaque
-typedef struct wt_tx wt_rx_t; // opaque
+/* 不透明 handle 宣告 */
+typedef struct wt_tx wt_tx_t; // opaque TX handle
+typedef struct wt_rx wt_rx_t; // opaque RX handle
+
 
 typedef struct {
 	wt_codec_t codec;
