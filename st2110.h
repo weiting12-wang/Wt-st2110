@@ -64,7 +64,7 @@ typedef void (*wt_rx_packet_callback_t)(const wt_packet_t* packet, void* user_da
 //
 // TX
 //
-wt_status_t wt_tx_create(wt_protocol_t proto, const char* local_ip, const char* dest_ip, int port, wt_tx_t** ppThis);
+wt_status_t wt_tx_create(wt_protocol_t proto, const char* port_name, const char* local_ip, const char* dest_ip, int port, wt_tx_t** ppThis);
 wt_status_t wt_tx_destroy(wt_tx_t* pThis);
 
 wt_status_t wt_tx_set_video_format(wt_tx_t* pThis, wt_codec_t codec, int width, int height, int fps_num, int fps_den);
@@ -80,7 +80,7 @@ wt_status_t wt_tx_send_packet(wt_tx_t* pThis, wt_packet_t* pPacket);
 //
 // RX
 //
-wt_status_t wt_rx_create(wt_protocol_t proto, const char* local_ip, const char* source_ip, int port, wt_rx_t** ppThis);
+wt_status_t wt_rx_create(wt_protocol_t proto, const char* port_name, const char* local_ip, const char* source_ip, int port, wt_rx_t** ppThis);
 wt_status_t wt_rx_destroy(wt_rx_t* pThis);
 
 wt_status_t wt_rx_set_connection_status_callback(wt_rx_t* pThis, wt_rx_connection_status_callback_t cb, void* user_data);
