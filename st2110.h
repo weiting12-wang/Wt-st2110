@@ -89,8 +89,11 @@ wt_status_t wt_rx_set_packet_callback(wt_rx_t* pThis, wt_rx_packet_callback_t cb
 wt_status_t wt_rx_start(wt_rx_t* pThis);
 wt_status_t wt_rx_stop(wt_rx_t* pThis);
 
-wt_status_t wt_rx_get_video_format(wt_rt* pThis, wt_codec_t* pCodec, int* pWidth, int* pHeight, int* pFpsNum, int* pFpsDen);
-wt_status_t wt_rx_get_audio_format(wt_rt* pThis, wt_codec_t* pCodec, int* pBitCount, int* pChannels, int* pFrequenct);
+wt_status_t wt_rx_set_video_format(wt_rx_t* pThis, wt_codec_t codec, int width, int height, int fps_num, int fps_den);
+wt_status_t wt_rx_set_audio_format(wt_rx_t* pThis, wt_codec_t codec, int bitcount, int channels, int frequency);
+
+wt_status_t wt_rx_get_video_format(wt_rx_t* pThis, wt_codec_t* pCodec, int* pWidth, int* pHeight, int* pFpsNum, int* pFpsDen);
+wt_status_t wt_rx_get_audio_format(wt_rx_t* pThis, wt_codec_t* pCodec, int* pBitCount, int* pChannels, int* pFrequenct);
 // wt_status_t wt_rx_get_timecode_format(wt_rt* pThis, wt_codec_t* pCodec, ...);
 // wt_status_t wt_rx_get_subtitle_format(wt_rt* pThis, wt_codec_t* pCodec, ...);
 
